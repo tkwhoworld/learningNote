@@ -1,0 +1,17 @@
+OS requirements🔗
+To install Docker Engine, you need a maintained version of CentOS 7 or 8. Archived versions aren’t supported or tested.
+The centos-extras repository must be enabled. This repository is enabled by default, but if you have disabled it, you need to re-enable it.
+
+2.查看是否曾经安装过docker相关
+docker早期在系统中安装被称作docker或者docker-engine。使用以下命令，来删除系统中曾经安装的docker：
+sudo yum remove docker \
+                  docker-client \
+                  docker-client-latest \
+                  docker-common \
+                  docker-latest \
+                  docker-latest-logrotate \
+                  docker-logrotate \
+                  docker-engine
+
+3.yum install -y yum-utils
+4.yum-config-manager --add-repo https://download.docker.com/linux/centos/docker-ce.repo

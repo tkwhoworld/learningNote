@@ -1,0 +1,4 @@
+go env -w GOOS=linux
+go env -w GOARCH=adm64
+
+go env -w GOOS=windows

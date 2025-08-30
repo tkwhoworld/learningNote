@@ -1,0 +1,39 @@
+1.kafka使用场景
+1）秒杀
+2）削峰
+3）日志收集
+4）通知
+5）事件驱动
+6）最终一致性的分布式事务方案
+2.kafka面试要点
+1）概念
+Producer
+Broker
+Consumer
+Topic
+Partition
+2)高可用
+a.分区分库
+b.主从复制
+c.ISR
+3）高性能
+
+./kafka-topics.sh --bootstrap-server localhost:9092 --create --topic ws2ms_chat_offline --partitions 1 --replication-factor 1
+./kafka-topics.sh --bootstrap-server localhost:9092 --create --topic ms2ps_chat --partitions 1 --replication-factor 1
+./kafka-topics.sh --bootstrap-server localhost:9092 --create --topic ws2ms_chat --partitions 1 --replication-factor 1
+
+./kafka-topics.sh --bootstrap-server localhost:9092 --list
+
+
+./kafka-topics.sh --bootstrap-server localhost:9092 --topic ws2ms_chat_offline --describe
+
+
+  msgToMongoOffline:
+    addr: [ 127.0.0.1:9092 ] #kafka配置，默认即可
+    topic: "msg_to_mongo_offline"
+  msgToMySql:
+    addr: [ 127.0.0.1:9092 ] #kafka配置，默认即可
+    topic: "msg_to_mysql"
+  msgToPush:
+    addr: [ 127.0.0.1:9092 ] #kafka配置，默认即可
+    topic: "msg_to_push"
